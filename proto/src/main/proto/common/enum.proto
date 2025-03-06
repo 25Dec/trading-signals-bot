@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+package common;
+
+option java_multiple_files = true;
+option java_package = "com.tnhandev.proto.common";
+
+enum Action {
+  NONE = 0;
+  LONG = 1;
+  SHORT = 2;
+}
+
+enum Interval {
+  Min1 = 0;
+  Min5 = 1;
+  Min15 = 2;
+  Min30 = 3;
+  Min60 = 4;
+  Hour4 = 5;
+  Hour8 = 6;
+  Day1 = 7;
+  Week1 = 8;
+  Month1 = 9;
+}

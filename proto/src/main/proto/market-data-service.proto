@@ -1,0 +1,33 @@
+syntax = "proto3";
+
+package common;
+
+option java_multiple_files = true;
+option java_package = "com.tnhandev.proto";
+
+import "google/protobuf/empty.proto";
+import "google/protobuf/timestamp.proto";
+import "common/ticker.proto";
+import "common/enum.proto";
+
+service MarketDataService {
+  rpc GetAllTickers(google.protobuf.Empty) returns (GetAllTickersResponse);
+  rpc GetKlineDataByTicker(GetKlineDataByTickerRequest) returns (GetKlineDataByTickerResponse);
+}
+
+message GetAllTickersResponse {
+  repeated common.Ticker tickers = 1;
+}
+
+message GetKlineDataByTickerRequest {
+  string symbol = 1;
+  common.Interval interval = 2;
+}
+
+message GetKlineDataByTickerResponse {
+  repeated int64 times = 1;
+  repeated double openPrices = 2;
+  repeated double closePrices = 3;
+  repeated double highPrices = 4;
+  repeated double lowPrices = 5;
+}

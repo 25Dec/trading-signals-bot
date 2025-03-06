@@ -1,0 +1,34 @@
+syntax = "proto3";
+
+package common;
+
+option java_multiple_files = true;
+option java_package = "com.tnhandev.proto";
+
+import "common/enum.proto";
+
+service RSIDivergenceService {
+  rpc CalculateRSI(CalculateRSIRequest) returns (CalculateRSIResponse);
+  rpc DetectDivergence(DetectDivergenceRequest) returns (stream DetectDivergenceResponse);
+}
+
+message CalculateRSIRequest {
+  string symbol = 1;
+  repeated double closePrices = 2;
+  int32 period = 3;
+}
+
+message CalculateRSIResponse {
+  string symbol = 1;
+  repeated double rsiValues = 2;
+}
+
+message DetectDivergenceRequest {
+  string symbol = 1;
+  repeated double rsiValues = 2;
+  repeated double closePrices = 3;
+}
+
+message DetectDivergenceResponse {
+  common.Action action = 1;
+}

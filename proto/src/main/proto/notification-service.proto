@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package common;
+
+option java_multiple_files = true;
+option java_package = "com.tnhandev.proto";
+
+import "common/enum.proto";
+import "google/protobuf/timestamp.proto";
+
+service NotificationService {
+  rpc SendTelegram(NotificationRequest) returns (NotificationResponse);
+}
+
+message NotificationRequest {
+  common.Action action = 1;
+  string symbol = 2;
+  int64 time = 3;
+}
+
+message NotificationResponse {
+  bool success = 1;
+}
