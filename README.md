@@ -19,6 +19,16 @@ dịch trên các cặp giao dịch như BTC_USDT, ETH_USDT...
 - Phát hiện các mô hình phân kỳ (Bullish Divergence, Bearish Divergence).
 - Gửi tín hiệu Long/Short tự động qua kênh Telegram.
 
+## 🛠️ Tech stack
+
+- **Backend:** Java + Spring Boot
+
+- **Communication:** gRPC
+
+- **Database:** PostgreSQL
+
+- **Containerization:** Docker
+
 ## 🖼️ Demo
 
 ## 📋 Tham gia để nhận tín hiệu Long/Short ngay và luôn
