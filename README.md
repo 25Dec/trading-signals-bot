@@ -31,6 +31,8 @@ dịch trên các cặp giao dịch như BTC_USDT, ETH_USDT...
 
 ## 🖼️ Demo
 
+![Signals From Telegram](demo/signals-from-telegram.png)
+
 ## 📋 Tham gia để nhận tín hiệu Long/Short ngay và luôn
 
 - **Telegram:** https://t.me/tnhandev_trading_signals_bot
